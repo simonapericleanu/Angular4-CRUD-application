@@ -1,0 +1,10 @@
+.sign-in-area {
+    max-width: 1200px;
+    margin: 50px auto;
+}
+
+form {
+    border: 1px solid #ccc;
+    padding: 30px;
+    border-radius: 15px;
+}

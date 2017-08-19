@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "title": "Pride and Prejudice",
+    "author": "Jane Austen",
+    "style": "Romance",
+    "description": "The story charts the emotional development of the protagonist, Elizabeth Bennet, who learns the error of making hasty judgements and comes to appreciate the difference between the superficial and the essential."
+  },
+  {
+    "id": 2,
+    "title": "Karamazov Brothers",
+    "author": "Fiodr Dostoievski",
+    "style": "Drama",
+    "description": "A really nice book"
+  }
+]

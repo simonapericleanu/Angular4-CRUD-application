@@ -1,0 +1,31 @@
+<div class="books-area">
+  <div class="container-fluid">
+
+      <!--Search a book-->
+    <div class="row">
+      <div class="col-xs-12 col-sm-6">
+        <form class="form-horizontal">
+          <div class="form-group">
+              <div class="col-xs-8">
+                  <input type="text" class="form-control" placeholder="Search">
+              </div>
+          </div>
+        </form>
+      </div>
+
+      <!--Create new book-->
+        <div class="col-xs-12 col-sm-4 col-sm-offset-2">
+            <button type="button" class="btn btn-primary btn-md"><span class="glyphicon glyphicon-plus"></span>  Add another book</button>
+        </div>
+    </div>
+      <!--Insert book template from book component-->
+      <ul>
+          <li *ngFor="let book of books">
+              <app-book [book]="book"></app-book>
+          </li>
+      </ul>
+    <!--<app-book></app-book>-->
+
+  </div>
+</div>
+
