@@ -24,12 +24,13 @@
                 <td class="col-xs-2"><strong>Description: </strong></td>
                 <td class="col-xs-12">{{book.description}}</td>
             </tr>
+
             <!--Actions-->
             <tr>
-                <td class="col-xs-2"><button type="button" class="btn btn-warning btn-sm"><span class="glyphicon glyphicon-pencil"></span> Edit</button></td>
-                <td class="col-xs-10"><button type="button" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-remove"></span> Delete</button></td>
+                <app-edit-book-modal></app-edit-book-modal>
             </tr>
             </tbody>
         </table>
     </div>
 </div>
+<br>
