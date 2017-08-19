@@ -2,15 +2,17 @@
   {
     "id": 1,
     "title": "Pride and Prejudice",
+    "image_url": "/assets/bookCovers/prideAndPrejudice.jpg",
     "author": "Jane Austen",
     "style": "Romance",
     "description": "The story charts the emotional development of the protagonist, Elizabeth Bennet, who learns the error of making hasty judgements and comes to appreciate the difference between the superficial and the essential."
   },
   {
     "id": 2,
-    "title": "Karamazov Brothers",
-    "author": "Fiodr Dostoievski",
+    "title": "The Brothers Karamazov",
+    "image_url": "/assets/bookCovers/The-Brothers-Karamazov.png",
+    "author": "Fyodor Dostoyevsky",
     "style": "Drama",
-    "description": "A really nice book"
+    "description": "The Brothers Karamazov is a passionate philosophical novel set in 19th-century Russia, that enters deeply into the ethical debates of God, free will, and morality. It is a spiritual drama of moral struggles concerning faith, doubt, judgment, and reason, set against a modernizing Russia, with a plot which revolves around the subject of patricide."
   }
 ]
