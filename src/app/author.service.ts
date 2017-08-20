@@ -28,4 +28,8 @@ export class AuthorService {
             this.authorItems[index] = editedAuthor;
         }
     }
+
+    deleteAuthor(author: Author) {
+        this.authorItems.splice(this.authorItems.indexOf(author), 1);
+    }
 }

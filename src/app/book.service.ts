@@ -26,4 +26,8 @@ export class BookService {
             this.bookItems[index] = editedBook;
         }
     }
+
+    deleteBook(book: Book) {
+        this.bookItems.splice(this.bookItems.indexOf(book), 1);
+    }
 }

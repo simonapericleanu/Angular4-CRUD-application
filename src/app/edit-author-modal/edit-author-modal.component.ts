@@ -44,5 +44,6 @@ export class EditAuthorModalComponent implements OnInit {
         this.authorService.updateAuthor(f.value);
         this.modalReference.close();
     }
+
 }
 

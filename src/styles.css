@@ -18,3 +18,7 @@ ul {
 ul li {
     list-style: none;
 }
+
+.edit-btn-container{
+    padding-left: 0;
+}
