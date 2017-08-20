@@ -9,12 +9,6 @@ form {
     padding-left: 0;
     margin-right: 15px;
 }
-ul {
-    padding: 0;
-}
-ul li {
-    list-style: none;
-}
 @media (max-width: 767px) {
     form {
         padding-left: 15px;

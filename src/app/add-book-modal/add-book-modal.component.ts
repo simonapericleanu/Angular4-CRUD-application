@@ -2,6 +2,8 @@ import {Component, Input, OnInit} from '@angular/core';
 
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 import {Book} from '../book';
+import {BookService} from '../book.service';
+import {NgForm} from '@angular/forms';
 
 @Component({
     selector: 'app-add-book-modal',
@@ -10,9 +12,10 @@ import {Book} from '../book';
 })
 export class AddBookModalComponent implements OnInit {
     closeResult: string;
+    newBook: any = {};
     @Input() public bookArg: Book;
 
-    constructor(private modalService: NgbModal) {
+    constructor(private modalService: NgbModal, private bookService: BookService) {
     }
 
     ngOnInit() {
@@ -34,5 +37,18 @@ export class AddBookModalComponent implements OnInit {
         } else {
             return `with: ${reason}`;
         }
+    }
+
+    // public addBook(book) {
+    //     this.bookService.createBook(book);
+    // }
+
+    public onSubmit(f: NgForm) {
+        console.log(f);
+
+        this.bookService.addBook(f.value)
+            // .subscribe(
+            //     () => alert('Admin Created!')
+            // );
     }
 }

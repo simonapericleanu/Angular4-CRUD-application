@@ -1,29 +1,20 @@
-import { Component, OnInit } from '@angular/core';
-import { BookService } from '../book.service';
-import {Book} from '../book';
+import {Component, OnInit} from '@angular/core';
 import {ModalDismissReasons, NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import { Author } from '../author';
+import { NgForm } from '@angular/forms';
+import { AuthorService } from '../author.service';
 
 @Component({
-  selector: 'app-books',
-  templateUrl: './books.component.html',
-  styleUrls: ['./books.component.css'],
-  providers: [BookService]
+  selector: 'app-edit-author-modal',
+  templateUrl: './edit-author-modal.component.html',
+  styleUrls: ['./edit-author-modal.component.css']
 })
-export class BooksComponent implements OnInit {
+export class EditAuthorModalComponent implements OnInit {
   closeResult: string;
-  books: Book[];
-  constructor(private bookService: BookService, private modalService: NgbModal) { }
-
-  ngOnInit() {
-    this.getBooks();
-    // this.bookService.getBooks()
-    //     .subscribe(
-    //         resBookData => this.books = resBookData
-    //     );
+  constructor(private modalService: NgbModal, private authorService: AuthorService) {
   }
 
-  getBooks() {
-    this.books = this.bookService.getBooksFromData()
+  ngOnInit() {
   }
 
   public open(content) {
@@ -43,4 +34,6 @@ export class BooksComponent implements OnInit {
       return `with: ${reason}`;
     }
   }
+
 }
+

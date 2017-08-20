@@ -1,69 +1,81 @@
-<!--Open Edit Modal-->
+<!--Open Edit Author Modal-->
 <div class="col-xs-2">
-  <button type="button" class="btn btn-warning btn-sm" (click)="open(content); showFormPopulated(book)">
+  <button type="button" class="btn btn-warning btn-sm" (click)="open(content)">
     <span class="glyphicon glyphicon-pencil"></span> Edit</button>
 </div>
 <div class="col-xs-10">
   <button type="button" class="btn btn-danger btn-sm">
     <span class="glyphicon glyphicon-remove"></span> Delete</button>
 </div>
-
 <!--Modal-->
 <ng-template #content let-c="close" let-d="dismiss">
   <div class="modal-header">
     <button type="button" class="close" (click)="d('Cross click')" data-dismiss="modal" aria-label="Close"><span
             aria-hidden="true">&times;</span></button>
-    <h4 class="modal-title" id="editBookModalLabel">Edit book</h4>
+    <h4 class="modal-title" id="editAuthorModalLabel">Edit author</h4>
   </div>
   <div class="modal-body">
     <form class="form-horizontal" #f="ngForm" (ngSubmit)="onSubmit(f)">
       <div class="form-group">
-        <label for="BookTitle" class="col-sm-3 control-label">Title</label>
+        <label for="AuthorName" class="col-sm-3 control-label">Name</label>
         <div class="col-sm-9">
           <input type="text"
-                 name="title"
+                 name="name"
                  class="form-control"
-                 id="BookTitle"
+                 id="AuthorName"
                  placeholder=""
                  ngModel>
         </div>
       </div>
       <div class="form-group">
-        <label for="BookAuthor" class="col-sm-3 control-label">Author</label>
+        <!--TODO Change it to be selectable-->
+        <label for="AuthorBirth" class="col-sm-3 control-label">Date of Birth</label>
         <div class="col-sm-9">
           <input type="text"
+                 name="birth"
                  class="form-control"
-                 name="author"
-                 id="BookAuthor"
+                 id="AuthorBirth"
+                 placeholder=""
+                 ngModel>
+        </div>
+      </div>
+      <!--TODO Change it to be selectable-->
+      <div class="form-group">
+        <label for="AuthorDeath" class="col-sm-3 control-label">Death Date</label>
+        <div class="col-sm-9">
+          <input type="text"
+                 name="death"
+                 class="form-control"
+                 id="AuthorDeath"
                  placeholder=""
                  ngModel>
         </div>
       </div>
       <div class="form-group">
-        <label for="BookStyle" class="col-sm-3 control-label">Style</label>
+        <label for="AuthorNationality" class="col-sm-3 control-label">Nationality</label>
         <div class="col-sm-9">
           <input type="text"
-                 name="style"
+                 name="nationality"
                  class="form-control"
-                 id="BookStyle"
+                 id="AuthorNationality"
                  placeholder=""
                  ngModel>
         </div>
       </div>
       <div class="form-group">
-        <label for="BookDescription" class="col-sm-3 control-label">Description</label>
+        <label for="AuthorBibliography" class="col-sm-3 control-label">Bibliography</label>
         <div class="col-sm-9">
-            <textarea name="description"
-                      class="form-control"
-                      id="BookDescription"
-                      placeholder="Write a short description of the book"
-                      ngModel></textarea>
+          <input type="text"
+                 name="bilbliography"
+                 class="form-control"
+                 id="AuthorBibliography"
+                 placeholder=""
+                 ngModel>
         </div>
       </div>
-
       <button type="submit" class="btn btn-primary">Save changes</button>
       <button type="button" class="btn btn-default" (click)="c('Close click')" aria-label="Close">Close</button>
-
     </form>
   </div>
 </ng-template>
+

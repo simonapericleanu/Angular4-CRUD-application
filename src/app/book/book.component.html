@@ -6,31 +6,32 @@
 </div>
 <!--Book data-->
 <div class="row">
-    <div class="col-xs-4 col-sm-3 book-cover-container">
-        <img src="{{book.image_url}}" width="800" height="1200" class="img-responsive" alt="Book Cover">
+    <div class="col-xs-3 data-container">
+        <p><strong>Author: </strong></p>
     </div>
-    <div class="col-xs-8 col-sm-9">
-        <table>
-            <tbody>
-            <tr>
-                <td class="col-xs-2"><strong>Author: </strong></td>
-                <td class="col-xs-10">{{book.author}}</td>
-            </tr>
-            <tr>
-                <td class="col-xs-2"><strong>Style: </strong></td>
-                <td class="col-xs-10">{{book.style}}</td>
-            </tr>
-            <tr class="hidden-xs">
-                <td class="col-xs-2"><strong>Description: </strong></td>
-                <td class="col-xs-12">{{book.description}}</td>
-            </tr>
-
-            <!--Actions-->
-            <tr>
-                <app-edit-book-modal></app-edit-book-modal>
-            </tr>
-            </tbody>
-        </table>
+    <div class="col-xs-9 data-container">
+        <p>{{book.author}}</p>
     </div>
 </div>
+<div class="row">
+    <div class="col-xs-3 data-container">
+        <p><strong>Style: </strong></p>
+    </div>
+    <div class="col-xs-9 data-container">
+        <p>{{book.style}}</p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-3 data-container">
+        <p><strong>Description: </strong></p>
+    </div>
+    <div class="col-xs-9 data-container">
+        <p>{{book.description}}</p>
+    </div>
+</div>
+
+        <!--Edit book modal-->
+    <app-edit-book-modal></app-edit-book-modal>
+
 <br>
+<hr>

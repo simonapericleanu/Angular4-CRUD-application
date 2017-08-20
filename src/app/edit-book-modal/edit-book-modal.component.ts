@@ -1,5 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {ModalDismissReasons, NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import {Book} from '../book';
+import { NgForm } from '@angular/forms';
+import {BookService} from '../book.service';
 
 @Component({
     selector: 'app-edit-book-modal',
@@ -8,8 +11,9 @@ import {ModalDismissReasons, NgbModal} from '@ng-bootstrap/ng-bootstrap';
 })
 export class EditBookModalComponent implements OnInit {
     closeResult: string;
-
-    constructor(private modalService: NgbModal) {
+    book: Book[];
+    newBook: any = {};
+    constructor(private modalService: NgbModal, private bookService: BookService) {
     }
 
     ngOnInit() {
@@ -32,5 +36,6 @@ export class EditBookModalComponent implements OnInit {
             return `with: ${reason}`;
         }
     }
+
 
 }

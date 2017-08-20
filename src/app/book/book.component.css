@@ -2,11 +2,6 @@
     max-height: 200px;
     width: auto;
 }
-td {
-    padding: 10px;
-}
-@media (max-width: 425px) {
-    td {
-        padding: 5px;
-    }
+.data-container {
+    padding: 0 15px;
 }

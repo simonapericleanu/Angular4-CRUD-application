@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RegisterComponent } from './sign-up.component';
+import { EditAuthorModalComponent } from './edit-author-modal.component';
 
-describe('RegisterComponent', () => {
-  let component: RegisterComponent;
-  let fixture: ComponentFixture<RegisterComponent>;
+describe('EditAuthorModalComponent', () => {
+  let component: EditAuthorModalComponent;
+  let fixture: ComponentFixture<EditAuthorModalComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ RegisterComponent ]
+      declarations: [ EditAuthorModalComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(RegisterComponent);
+    fixture = TestBed.createComponent(EditAuthorModalComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
