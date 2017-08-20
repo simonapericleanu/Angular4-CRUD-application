@@ -24,7 +24,7 @@
                  name="name"
                  class="form-control"
                  id="AuthorName"
-                 [(ngModel)]="author.name"
+                 [(ngModel)]="editedAuthor.name"
                  placeholder=""
                  >
         </div>
@@ -37,7 +37,7 @@
                  name="birth"
                  class="form-control"
                  id="AuthorBirth"
-                 [(ngModel)]="author.birth"
+                 [(ngModel)]="editedAuthor.birth"
                  placeholder="">
         </div>
       </div>
@@ -49,7 +49,7 @@
                  name="death"
                  class="form-control"
                  id="AuthorDeath"
-                 [(ngModel)]="author.death"
+                 [(ngModel)]="editedAuthor.death"
                  placeholder="">
         </div>
       </div>
@@ -60,7 +60,7 @@
                  name="nationality"
                  class="form-control"
                  id="AuthorNationality"
-                 [(ngModel)]="author.nationality"
+                 [(ngModel)]="editedAuthor.nationality"
                  placeholder="">
         </div>
       </div>
@@ -71,9 +71,13 @@
                  name="bilbliography"
                  class="form-control"
                  id="AuthorBibliography"
-                 [(ngModel)]="author.bibliography"
+                 [(ngModel)]="editedAuthor.bibliography"
                  placeholder="">
         </div>
+      </div>
+      <!--Hidden id input to be able to perform edits on authors-->
+      <div class="form-group">
+        <input type="hidden" name="id" [(ngModel)]="editedAuthor.id">
       </div>
       <div class="form-group">
         <button type="submit" class="col-xs-4 col-xs-offset-4 btn btn-primary text-center">Save changes</button>

@@ -12,6 +12,7 @@ import {NgForm} from '@angular/forms';
 export class EditAuthorModalComponent implements OnInit {
     modalReference: any;
     closeResult: string;
+    editedAuthor: Author;
     @Input() public author: Author;
 
     constructor(private modalService: NgbModal, private authorService: AuthorService) {
@@ -20,6 +21,7 @@ export class EditAuthorModalComponent implements OnInit {
     }
 
     public open(content) {
+        this.editedAuthor = Object.assign({}, this.author);
         this.modalReference = this.modalService.open(content);
         this.modalReference.result.then((result) => {
             this.closeResult = `Closed with: ${result}`;
@@ -39,6 +41,7 @@ export class EditAuthorModalComponent implements OnInit {
     }
 
     public onSubmit(f: NgForm) {
+        this.authorService.updateAuthor(f.value);
         this.modalReference.close();
     }
 }

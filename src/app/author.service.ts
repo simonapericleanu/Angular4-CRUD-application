@@ -19,7 +19,13 @@ export class AuthorService {
 
     addAuthor(author: Author) {
         this.authorItems.push(author);
-        console.log(this.authorItems)
     }
 
+    updateAuthor(editedAuthor) {
+        const index = this.authorItems.findIndex(author => author.id === editedAuthor.id);
+        console.log(index, editedAuthor);
+        if (index !== -1) {
+            this.authorItems[index] = editedAuthor;
+        }
+    }
 }
