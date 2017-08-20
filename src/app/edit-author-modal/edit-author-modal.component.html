@@ -14,6 +14,7 @@
             aria-hidden="true">&times;</span></button>
     <h4 class="modal-title" id="editAuthorModalLabel">Edit author</h4>
   </div>
+
   <div class="modal-body">
     <form class="form-horizontal" #f="ngForm" (ngSubmit)="onSubmit(f)">
       <div class="form-group">
@@ -23,8 +24,9 @@
                  name="name"
                  class="form-control"
                  id="AuthorName"
+                 [(ngModel)]="author.name"
                  placeholder=""
-                 ngModel>
+                 >
         </div>
       </div>
       <div class="form-group">
@@ -35,8 +37,8 @@
                  name="birth"
                  class="form-control"
                  id="AuthorBirth"
-                 placeholder=""
-                 ngModel>
+                 [(ngModel)]="author.birth"
+                 placeholder="">
         </div>
       </div>
       <!--TODO Change it to be selectable-->
@@ -47,8 +49,8 @@
                  name="death"
                  class="form-control"
                  id="AuthorDeath"
-                 placeholder=""
-                 ngModel>
+                 [(ngModel)]="author.death"
+                 placeholder="">
         </div>
       </div>
       <div class="form-group">
@@ -58,8 +60,8 @@
                  name="nationality"
                  class="form-control"
                  id="AuthorNationality"
-                 placeholder=""
-                 ngModel>
+                 [(ngModel)]="author.nationality"
+                 placeholder="">
         </div>
       </div>
       <div class="form-group">
@@ -69,12 +71,13 @@
                  name="bilbliography"
                  class="form-control"
                  id="AuthorBibliography"
-                 placeholder=""
-                 ngModel>
+                 [(ngModel)]="author.bibliography"
+                 placeholder="">
         </div>
       </div>
-      <button type="submit" class="btn btn-primary">Save changes</button>
-      <button type="button" class="btn btn-default" (click)="c('Close click')" aria-label="Close">Close</button>
+      <div class="form-group">
+        <button type="submit" class="col-xs-4 col-xs-offset-4 btn btn-primary text-center">Save changes</button>
+      </div>
     </form>
   </div>
 </ng-template>

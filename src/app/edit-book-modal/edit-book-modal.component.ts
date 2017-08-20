@@ -1,7 +1,7 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {ModalDismissReasons, NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import {Book} from '../book';
-import { NgForm } from '@angular/forms';
+import {NgForm} from '@angular/forms';
 import {BookService} from '../book.service';
 
 @Component({
@@ -10,17 +10,22 @@ import {BookService} from '../book.service';
     styleUrls: ['./edit-book-modal.component.css']
 })
 export class EditBookModalComponent implements OnInit {
+    modalReference: any;
     closeResult: string;
-    book: Book[];
-    newBook: any = {};
+    editedBook: Book;
+    @Input() public book: Book;
+
     constructor(private modalService: NgbModal, private bookService: BookService) {
     }
 
     ngOnInit() {
     }
 
+
     public open(content) {
-        this.modalService.open(content).result.then((result) => {
+        this.editedBook = Object.assign({}, this.book);
+        this.modalReference = this.modalService.open(content);
+        this.modalReference.result.then((result) => {
             this.closeResult = `Closed with: ${result}`;
         }, (reason) => {
             this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
@@ -37,5 +42,9 @@ export class EditBookModalComponent implements OnInit {
         }
     }
 
+    public onSubmit(f: NgForm) {
+        this.bookService.updateBook(f.value);
+        this.modalReference.close();
+    }
 
 }

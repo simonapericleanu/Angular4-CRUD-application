@@ -21,4 +21,5 @@ export class AuthorService {
         this.authorItems.push(author);
         console.log(this.authorItems)
     }
+
 }

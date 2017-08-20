@@ -6,7 +6,7 @@ import {Http, Response, Headers} from '@angular/http';
 import 'rxjs/Rx';
 import {Observable} from 'rxjs/Observable';
 import {Book} from './book';
-import { BOOK_DATA } from './book-data'
+import {BOOK_DATA} from './book-data'
 
 @Injectable()
 export class BookService {
@@ -21,8 +21,31 @@ export class BookService {
     }
 
     addBook(book: Book) {
-        this.bookItems.push(book);
-        console.log(this.bookItems)
+        this.bookItems.push(book)
+    }
+
+    updateBook(editedBook) {
+        const index = this.bookItems.findIndex(book => book.id === editedBook.id);
+        if (index !== -1) {
+            this.bookItems[index] = editedBook;
+        }
+    }
+
+    // findIndexToUpdate(newItem) {
+    //     return newItem.id === this;
+    // }
+    // showUpdatedItem(newItem){
+    //     let updateItem = this.itemArray.items.find(this.findIndexToUpdate, newItem.id));
+    //
+    //     let index = this.itemArray.items.indexOf(updateItem);
+    //
+    //
+    //     this.itemArray.items[index] = newItem;
+    //
+    // }
+
+    findIndexToUpdate(newItem) {
+        return newItem.id === this;
     }
 
     // getBooks(): Observable<Book[]> {

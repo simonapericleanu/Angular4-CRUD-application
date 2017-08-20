@@ -1,6 +1,6 @@
 <!--Open Edit Modal-->
 <div class="col-xs-2">
-  <button type="button" class="btn btn-warning btn-sm" (click)="open(content); showFormPopulated(book)">
+  <button type="button" class="btn btn-warning btn-sm" (click)="open(content)">
     <span class="glyphicon glyphicon-pencil"></span> Edit</button>
 </div>
 <div class="col-xs-10">
@@ -25,7 +25,7 @@
                  class="form-control"
                  id="BookTitle"
                  placeholder=""
-                 ngModel>
+                 [(ngModel)]="editedBook.title">
         </div>
       </div>
       <div class="form-group">
@@ -36,7 +36,7 @@
                  name="author"
                  id="BookAuthor"
                  placeholder=""
-                 ngModel>
+                 [(ngModel)]="editedBook.author">
         </div>
       </div>
       <div class="form-group">
@@ -47,7 +47,7 @@
                  class="form-control"
                  id="BookStyle"
                  placeholder=""
-                 ngModel>
+                 [(ngModel)]="editedBook.style">
         </div>
       </div>
       <div class="form-group">
@@ -57,13 +57,17 @@
                       class="form-control"
                       id="BookDescription"
                       placeholder="Write a short description of the book"
-                      ngModel></textarea>
+                      [(ngModel)]="editedBook.description"></textarea>
         </div>
       </div>
-
-      <button type="submit" class="btn btn-primary">Save changes</button>
-      <button type="button" class="btn btn-default" (click)="c('Close click')" aria-label="Close">Close</button>
-
+      <div class="form-group">
+        <input type="hidden"
+               name="id"
+               [(ngModel)]="editedBook.id">
+      </div>
+      <div class="form-group">
+            <button type="submit" class="col-xs-4 col-xs-offset-4 btn btn-primary text-center">Save changes</button>
+      </div>
     </form>
   </div>
 </ng-template>
