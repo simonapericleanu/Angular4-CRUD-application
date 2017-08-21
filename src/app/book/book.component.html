@@ -7,7 +7,7 @@
 <!--Book data-->
 <div class="row">
     <div class="col-xs-4 col-sm-3 book-cover-container">
-        <img src="/assets/bookCovers/prideAndPrejudice.jpg" width="800" height="1200" class="img-responsive" alt="Book Cover">
+        <img src="{{book.image_url}}" width="800" height="1200" class="img-responsive" alt="Book Cover">
     </div>
     <div class="col-xs-8 col-sm-9">
         <table>
@@ -24,12 +24,13 @@
                 <td class="col-xs-2"><strong>Description: </strong></td>
                 <td class="col-xs-12">{{book.description}}</td>
             </tr>
+
             <!--Actions-->
             <tr>
-                <td class="col-xs-2"><button type="button" class="btn btn-warning btn-sm"><span class="glyphicon glyphicon-pencil"></span> Edit</button></td>
-                <td class="col-xs-10"><button type="button" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-remove"></span> Delete</button></td>
+                <app-edit-book-modal></app-edit-book-modal>
             </tr>
             </tbody>
         </table>
     </div>
 </div>
+<br>

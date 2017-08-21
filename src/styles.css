@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+
+/*Modal styles added here because ng-bootstrap package only functions with Boostrap 4,
+so to make it work with Bootstrap 3, the styles need to be added globally*/
+ngb-modal-window.fade{
+    opacity: 1 !important;
+}
+ngb-modal-window {
+    background: rgba(192, 192, 192, 0.7);
+}
+.modal-dialog {
+    margin: 200px auto;
+}
