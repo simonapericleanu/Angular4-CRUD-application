@@ -19,6 +19,9 @@ import {BookService} from './book.service';
 import { EditAuthorModalComponent } from './edit-author-modal/edit-author-modal.component';
 import { AddAuthorModalComponent } from './add-author-modal/add-author-modal.component';
 
+import { BooksFilterPipe } from './pipes/books-filter-pipe/books-filter.pipe';
+import { AuthorsFilterPipe } from './pipes/authors-filter-pipe/authors-filter.pipe';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +34,9 @@ import { AddAuthorModalComponent } from './add-author-modal/add-author-modal.com
     AddBookModalComponent,
     EditBookModalComponent,
     EditAuthorModalComponent,
-    AddAuthorModalComponent
+    AddAuthorModalComponent,
+    BooksFilterPipe,
+    AuthorsFilterPipe
   ],
   imports: [
     BrowserModule,

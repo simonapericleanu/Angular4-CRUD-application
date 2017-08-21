@@ -7,7 +7,11 @@
                 <form class="form-horizontal">
                     <div class="form-group">
                         <div class="col-xs-8">
-                            <input type="text" class="form-control" placeholder="Search">
+                            <input type="text"
+                                   name="term"
+                                   class="form-control"
+                                   placeholder="Search by title"
+                                   [(ngModel)]="term">
                         </div>
                     </div>
                 </form>
@@ -21,7 +25,7 @@
 
         <!--Insert book template from book component-->
         <ul>
-            <li *ngFor="let book of books">
+            <li *ngFor="let book of books | booksFilter:term">
                 <app-book [book]="book"></app-book>
             </li>
         </ul>

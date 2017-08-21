@@ -38,10 +38,6 @@ export class AddBookModalComponent implements OnInit {
         }
     }
 
-    // public addBook(book) {
-    //     this.bookService.createBook(book);
-    // }
-
     public onSubmit(f: NgForm) {
         this.bookService.addBook(f.value);
         this.modalReference.close();

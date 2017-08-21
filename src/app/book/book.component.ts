@@ -18,6 +18,8 @@ export class BookComponent implements OnInit {
     }
 
     public removeBook(book: Book) {
-        this.bookService.deleteBook(book);
+        if (confirm('Are you sure to delete the book?')) {
+            this.bookService.deleteBook(book);
+        }
     }
 }

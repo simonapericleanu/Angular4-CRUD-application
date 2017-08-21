@@ -1,19 +1,24 @@
-import { Component, Input, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {Author} from '../author';
 import {AuthorService} from '../author.service';
 
 @Component({
-  selector: 'app-author',
-  templateUrl: './author.component.html',
-  styleUrls: ['./author.component.css']
+    selector: 'app-author',
+    templateUrl: './author.component.html',
+    styleUrls: ['./author.component.css']
 })
 export class AuthorComponent implements OnInit {
-  @Input() public author: Author;
-  constructor(private authorService: AuthorService) { }
+    @Input() public author: Author;
 
-  ngOnInit() {
-  }
-  public removeAuthor(author: Author) {
-    this.authorService.deleteAuthor(author);
-  }
+    constructor(private authorService: AuthorService) {
+    }
+
+    ngOnInit() {
+    }
+
+    public removeAuthor(author: Author) {
+        if (confirm('Are you sure to delete the author?')) {
+            this.authorService.deleteAuthor(author);
+        }
+    }
 }

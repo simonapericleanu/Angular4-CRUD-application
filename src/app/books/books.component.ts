@@ -3,11 +3,12 @@ import { BookService } from '../book.service';
 import {Book} from '../book';
 import {ModalDismissReasons, NgbModal} from '@ng-bootstrap/ng-bootstrap';
 
+
 @Component({
   selector: 'app-books',
   templateUrl: './books.component.html',
   styleUrls: ['./books.component.css'],
-  providers: [BookService]
+  providers: [BookService],
 })
 export class BooksComponent implements OnInit {
   closeResult: string;
@@ -16,10 +17,6 @@ export class BooksComponent implements OnInit {
 
   ngOnInit() {
     this.getBooks();
-    // this.bookService.getBooks()
-    //     .subscribe(
-    //         resBookData => this.books = resBookData
-    //     );
   }
 
   getBooks() {

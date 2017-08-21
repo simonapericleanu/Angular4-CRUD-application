@@ -7,7 +7,11 @@
                 <form class="form-horizontal">
                     <div class="form-group">
                         <div class="col-xs-8">
-                            <input type="text" class="form-control" placeholder="Search">
+                            <input type="text"
+                                   name="term"
+                                   class="form-control"
+                                   placeholder="Search by name"
+                                   [(ngModel)]="term">
                         </div>
                     </div>
                 </form>
@@ -21,7 +25,7 @@
 
         <!--Insert author template from author component-->
         <ul>
-            <li *ngFor="let author of authors">
+            <li *ngFor="let author of authors | authorsFilter:term">
                 <app-author [author]="author"></app-author>
             </li>
         </ul>

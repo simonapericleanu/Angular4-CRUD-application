@@ -17,4 +17,20 @@ export const AUTHOR_DATA: Author[] = [
         'nationality': 'Russian',
         'bibliography': 'Notes from underground, Crime and Punishment, The idiot, Demons, The Brothers Karamazov'
     },
+    {
+        'id': 3,
+        'name': 'Mark Twain',
+        'birth': '30 November 1835',
+        'death': '21 April 1910',
+        'nationality': 'American',
+        'bibliography': 'Adventures of Huckleberry Finn, The Adventures of Tom Sawyer'
+    },
+    {
+        'id': 4,
+        'name': 'Marcel Proust',
+        'birth': '10 July 1871',
+        'death': '18 November 1922',
+        'nationality': 'French',
+        'bibliography': 'In search of lost time'
+    },
 ]
