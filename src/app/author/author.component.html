@@ -40,5 +40,12 @@
 <!--Edit author modal-->
 <app-edit-author-modal [author]="author"></app-edit-author-modal>
 
+
+<!--Remove Author-->
+<div class="col-xs-10">
+  <button type="button" class="btn btn-danger btn-sm" (click)="removeAuthor(author)">
+    <span class="glyphicon glyphicon-remove"></span> Delete</button>
+</div>
+
 <br>
 <hr>

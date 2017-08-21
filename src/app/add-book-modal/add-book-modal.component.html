@@ -55,8 +55,10 @@
                               ngModel></textarea>
                 </div>
             </div>
-            <button type="submit" class="btn btn-primary">Save changes</button>
-            <button type="button" class="btn btn-default" (click)="c('Close click')" aria-label="Close">Close</button>
+            <div class="form-group">
+                <button type="submit" class="col-xs-4 col-xs-offset-2 col-sm-3 col-sm-offset-3 btn btn-primary">Save changes</button>
+                <button type="button" class="col-xs-2 col-xs-offset-1 btn btn-default" (click)="c('Close click')" aria-label="Close">Close</button>
+            </div>
         </form>
     </div>
 </ng-template>

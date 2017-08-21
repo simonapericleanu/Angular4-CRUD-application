@@ -30,8 +30,15 @@
     </div>
 </div>
 
-        <!--Edit book modal-->
-    <app-edit-book-modal [book]="book"></app-edit-book-modal>
+    <!--Edit book modal-->
+<app-edit-book-modal [book]="book"></app-edit-book-modal>
+
+
+<!--Remove Book-->
+<div class="col-xs-10">
+    <button type="button" class="btn btn-danger btn-sm" (click)="removeBook(book)">
+        <span class="glyphicon glyphicon-remove"></span> Delete</button>
+</div>
 
 <br>
 <hr>
