@@ -43,5 +43,13 @@ export const BOOK_DATA: Book[] = [
         ' had developed in the Western Church by the 14th century. It helped establish the Tuscan language,' +
         ' in which it is written, as the standardized Italian language. It is divided into three parts:' +
         ' Inferno, Purgatorio, and Paradiso.'
+    },
+    {
+        'id': 5,
+        'title': 'The Old Man and The Sea',
+        'author': 'Ernest Hemingway',
+        'style': 'Psychological novel',
+        'description': '  It tells the story of Santiago, an aging Cuban fisherman who struggles with a' +
+        ' giant marlin far out in the Gulf Stream off the coast of Florida.[2]'
     }
 ]
