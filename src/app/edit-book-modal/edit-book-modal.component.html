@@ -1,6 +1,12 @@
 <!--Open Edit Modal-->
-<td class="col-xs-2"><button type="button" class="btn btn-warning btn-sm" (click)="open(content)"><span class="glyphicon glyphicon-pencil"></span> Edit</button></td>
-<td class="col-xs-10"><button type="button" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-remove"></span> Delete</button></td>
+<div class="col-xs-2">
+  <button type="button" class="btn btn-warning btn-sm" (click)="open(content)">
+    <span class="glyphicon glyphicon-pencil"></span> Edit</button>
+</div>
+<div class="col-xs-10">
+  <button type="button" class="btn btn-danger btn-sm">
+    <span class="glyphicon glyphicon-remove"></span> Delete</button>
+</div>
 
 <!--Modal-->
 <ng-template #content let-c="close" let-d="dismiss">
@@ -10,43 +16,59 @@
     <h4 class="modal-title" id="editBookModalLabel">Edit book</h4>
   </div>
   <div class="modal-body">
-    <form class="form-horizontal">
+    <form class="form-horizontal" #f="ngForm" (ngSubmit)="onSubmit(f)">
       <div class="form-group">
         <label for="BookTitle" class="col-sm-3 control-label">Title</label>
         <div class="col-sm-9">
-          <input type="text" class="form-control" id="BookTitle" placeholder="">
-        </div>
-      </div>
-      <div class="form-group">
-        <label for="BookCover" class="col-sm-3 control-label">Book Cover</label>
-        <div class="col-sm-9">
-          <input type="file" id="BookCover">
-          <p class="help-block">Upload an image to be the book's cover.</p>
+          <input type="text"
+                 name="title"
+                 class="form-control"
+                 id="BookTitle"
+                 placeholder=""
+                 [(ngModel)]="editedBook.title">
         </div>
       </div>
       <div class="form-group">
         <label for="BookAuthor" class="col-sm-3 control-label">Author</label>
         <div class="col-sm-9">
-          <input type="text" class="form-control" id="BookAuthor" placeholder="">
+          <input type="text"
+                 class="form-control"
+                 name="author"
+                 id="BookAuthor"
+                 placeholder=""
+                 [(ngModel)]="editedBook.author">
         </div>
       </div>
       <div class="form-group">
         <label for="BookStyle" class="col-sm-3 control-label">Style</label>
         <div class="col-sm-9">
-          <input type="text" class="form-control" id="BookStyle" placeholder="">
+          <input type="text"
+                 name="style"
+                 class="form-control"
+                 id="BookStyle"
+                 placeholder=""
+                 [(ngModel)]="editedBook.style">
         </div>
       </div>
       <div class="form-group">
         <label for="BookDescription" class="col-sm-3 control-label">Description</label>
         <div class="col-sm-9">
-                    <textarea type="text" class="form-control" id="BookDescription"
-                              placeholder="Write a short description of the book"></textarea>
+            <textarea name="description"
+                      class="form-control"
+                      id="BookDescription"
+                      placeholder="Write a short description of the book"
+                      [(ngModel)]="editedBook.description"></textarea>
         </div>
       </div>
+      <!--Hidden id input to be able to perform edits on authors-->
+      <div class="form-group">
+        <input type="hidden"
+               name="id"
+               [(ngModel)]="editedBook.id">
+      </div>
+      <div class="form-group">
+            <button type="submit" class="col-xs-4 col-xs-offset-4 btn btn-primary text-center">Save changes</button>
+      </div>
     </form>
-  </div>
-  <div class="modal-footer">
-    <button type="button" class="btn btn-default" (click)="c('Close click')" aria-label="Close">Close</button>
-    <button type="button" class="btn btn-primary">Save changes</button>
   </div>
 </ng-template>

@@ -1,31 +1,30 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {ModalDismissReasons, NgbModal} from '@ng-bootstrap/ng-bootstrap';
-import {Book} from '../book';
+
+import {NgbModal, ModalDismissReasons, NgbModalRef} from '@ng-bootstrap/ng-bootstrap';
+import {AuthorService} from '../author.service';
 import {NgForm} from '@angular/forms';
-import {BookService} from '../book.service';
+import {Author} from '../author';
 
 @Component({
-    selector: 'app-edit-book-modal',
-    templateUrl: './edit-book-modal.component.html',
-    styleUrls: ['./edit-book-modal.component.css']
+    selector: 'app-add-author-modal',
+    templateUrl: './add-author-modal.component.html',
+    styleUrls: ['./add-author-modal.component.css']
 })
-export class EditBookModalComponent implements OnInit {
+export class AddAuthorModalComponent implements OnInit {
     modalReference: any;
     closeResult: string;
-    editedBook: Book;
-    @Input() public book: Book;
+    @Input() public author: Author;
 
-    constructor(private modalService: NgbModal, private bookService: BookService) {
+    constructor(private modalService: NgbModal, private authorService: AuthorService) {
     }
 
     ngOnInit() {
     }
 
-
     public open(content) {
-        this.editedBook = Object.assign({}, this.book);
         this.modalReference = this.modalService.open(content);
         this.modalReference.result.then((result) => {
+        // this.modalService.open(content).result.then((result) => {
             this.closeResult = `Closed with: ${result}`;
         }, (reason) => {
             this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
@@ -43,8 +42,7 @@ export class EditBookModalComponent implements OnInit {
     }
 
     public onSubmit(f: NgForm) {
-        this.bookService.updateBook(f.value);
+        this.authorService.addAuthor(f.value);
         this.modalReference.close();
     }
-
 }

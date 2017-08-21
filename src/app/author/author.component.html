@@ -1,44 +1,44 @@
-<!--Author Name-->
+<!--Author's info-->
 <div class="row">
   <div class="col-xs-12">
-    <h3>Author's name</h3>
+    <h3>{{author.name}}</h3>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-3 data-container">
+    <p><strong>Date of Birth: </strong></p>
+  </div>
+  <div class="col-xs-9 data-container">
+    <p>{{author.birth}}</p>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-3 data-container">
+    <p><strong>Death Date: </strong></p>
+  </div>
+  <div class="col-xs-9 data-container">
+    <p>{{author.death}}</p>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-3 data-container">
+    <p><strong>Nationality: </strong></p>
+  </div>
+  <div class="col-xs-9 data-container">
+    <p>{{author.nationality}}</p>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-3 data-container">
+    <p><strong>Bibliography: </strong></p>
+  </div>
+  <div class="col-xs-9 data-container">
+    <p>{{author.bibliography}}</p>
   </div>
 </div>
 
-<!--Author data-->
-<div class="row">
-  <div class="col-xs-4 col-sm-3 authors-pics-container">
-    <img src="/assets/authorsPics/JaneAusten.jpg" width="880" height="1100" class="img-responsive" alt="Jane Austen's Photography">
-  </div>
-  <div class="col-xs-8 col-sm-9">
-    <table>
-      <tbody>
-      <tr>
-        <td class="col-xs-2"><strong>Name: </strong></td>
-        <td class="col-xs-10">Jane Austen</td>
-      </tr>
-      <tr>
-        <td class="col-xs-2"><strong>Date of Birth: </strong></td>
-        <td class="col-xs-10">December 16, 1775</td>
-      </tr>
-      <tr>
-        <td class="col-xs-2"><strong>Date of Death: </strong></td>
-        <td class="col-xs-12">July 18, 1817</td>
-      </tr>
-      <tr>
-        <td class="col-xs-2"><strong>Nationality: </strong></td>
-        <td class="col-xs-12">British</td>
-      </tr>
-      <tr>
-        <td class="col-xs-2"><strong>Bibliography: </strong></td>
-        <td class="col-xs-12">Sense and Sensibility, Pride and Prejudice, Emma, Northanger Abbey</td>
-      </tr>
-      <!--Actions-->
-      <tr>
-        <td class="col-xs-2"><button type="button" class="btn btn-warning btn-sm"><span class="glyphicon glyphicon-pencil"></span> Edit</button></td>
-        <td class="col-xs-10"><button type="button" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-remove"></span> Delete</button></td>
-      </tr>
-      </tbody>
-    </table>
-  </div>
-</div>
+<!--Edit author modal-->
+<app-edit-author-modal [author]="author"></app-edit-author-modal>
+
+<br>
+<hr>

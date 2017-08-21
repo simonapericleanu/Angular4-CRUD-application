@@ -9,43 +9,54 @@
         <h4 class="modal-title" id="createNewBookModalLabel">Add another book</h4>
     </div>
     <div class="modal-body">
-        <form class="form-horizontal">
+        <form class="form-horizontal" #f="ngForm" (ngSubmit)="onSubmit(f)">
             <div class="form-group">
                 <label for="BookTitle" class="col-sm-3 control-label">Title</label>
                 <div class="col-sm-9">
-                    <input type="text" class="form-control" id="BookTitle" placeholder="">
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="BookCover" class="col-sm-3 control-label">Book Cover</label>
-                <div class="col-sm-9">
-                    <input type="file" id="BookCover">
-                    <p class="help-block">Upload an image to be the book's cover.</p>
+                    <input type="text"
+                           name="title"
+                           class="form-control"
+                           id="BookTitle"
+                           placeholder=""
+                           ngModel>
                 </div>
             </div>
             <div class="form-group">
                 <label for="BookAuthor" class="col-sm-3 control-label">Author</label>
                 <div class="col-sm-9">
-                    <input type="text" class="form-control" id="BookAuthor" placeholder="">
+                    <input type="text"
+                           name="author"
+                           class="form-control"
+                           id="BookAuthor"
+                           placeholder=""
+                           ngModel>
                 </div>
             </div>
+            <!--TODO Change it to be selectable-->
             <div class="form-group">
                 <label for="BookStyle" class="col-sm-3 control-label">Style</label>
                 <div class="col-sm-9">
-                    <input type="text" class="form-control" id="BookStyle" placeholder="">
+                    <input type="text"
+                           name="style"
+                           class="form-control"
+                           id="BookStyle"
+                           placeholder=""
+                           ngModel>
                 </div>
             </div>
             <div class="form-group">
                 <label for="BookDescription" class="col-sm-3 control-label">Description</label>
                 <div class="col-sm-9">
-                    <textarea type="text" class="form-control" id="BookDescription"
-                              placeholder="Write a short description of the book"></textarea>
+                    <textarea type="text"
+                              name="description"
+                              class="form-control"
+                              id="BookDescription"
+                              placeholder="Write a short description of the book"
+                              ngModel></textarea>
                 </div>
             </div>
+            <button type="submit" class="btn btn-primary">Save changes</button>
+            <button type="button" class="btn btn-default" (click)="c('Close click')" aria-label="Close">Close</button>
         </form>
     </div>
-    <div class="modal-footer">
-        <button type="button" class="btn btn-default" (click)="c('Close click')" aria-label="Close">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-</div>
 </ng-template>

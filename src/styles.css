@@ -11,3 +11,10 @@ ngb-modal-window {
 .modal-dialog {
     margin: 200px auto;
 }
+
+ul {
+    padding: 0;
+}
+ul li {
+    list-style: none;
+}

@@ -1,0 +1,88 @@
+<!--Open Edit Author Modal-->
+<div class="col-xs-2">
+  <button type="button" class="btn btn-warning btn-sm" (click)="open(content)">
+    <span class="glyphicon glyphicon-pencil"></span> Edit</button>
+</div>
+<div class="col-xs-10">
+  <button type="button" class="btn btn-danger btn-sm">
+    <span class="glyphicon glyphicon-remove"></span> Delete</button>
+</div>
+<!--Modal-->
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <button type="button" class="close" (click)="d('Cross click')" data-dismiss="modal" aria-label="Close"><span
+            aria-hidden="true">&times;</span></button>
+    <h4 class="modal-title" id="editAuthorModalLabel">Edit author</h4>
+  </div>
+
+  <div class="modal-body">
+    <form class="form-horizontal" #f="ngForm" (ngSubmit)="onSubmit(f)">
+      <div class="form-group">
+        <label for="AuthorName" class="col-sm-3 control-label">Name</label>
+        <div class="col-sm-9">
+          <input type="text"
+                 name="name"
+                 class="form-control"
+                 id="AuthorName"
+                 [(ngModel)]="editedAuthor.name"
+                 placeholder=""
+                 >
+        </div>
+      </div>
+      <div class="form-group">
+        <!--TODO Change it to be selectable-->
+        <label for="AuthorBirth" class="col-sm-3 control-label">Date of Birth</label>
+        <div class="col-sm-9">
+          <input type="text"
+                 name="birth"
+                 class="form-control"
+                 id="AuthorBirth"
+                 [(ngModel)]="editedAuthor.birth"
+                 placeholder="">
+        </div>
+      </div>
+      <!--TODO Change it to be selectable-->
+      <div class="form-group">
+        <label for="AuthorDeath" class="col-sm-3 control-label">Death Date</label>
+        <div class="col-sm-9">
+          <input type="text"
+                 name="death"
+                 class="form-control"
+                 id="AuthorDeath"
+                 [(ngModel)]="editedAuthor.death"
+                 placeholder="">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="AuthorNationality" class="col-sm-3 control-label">Nationality</label>
+        <div class="col-sm-9">
+          <input type="text"
+                 name="nationality"
+                 class="form-control"
+                 id="AuthorNationality"
+                 [(ngModel)]="editedAuthor.nationality"
+                 placeholder="">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="AuthorBibliography" class="col-sm-3 control-label">Bibliography</label>
+        <div class="col-sm-9">
+          <input type="text"
+                 name="bilbliography"
+                 class="form-control"
+                 id="AuthorBibliography"
+                 [(ngModel)]="editedAuthor.bibliography"
+                 placeholder="">
+        </div>
+      </div>
+      <!--Hidden id input to be able to perform edits on authors-->
+      <div class="form-group">
+        <input type="hidden" name="id" [(ngModel)]="editedAuthor.id">
+      </div>
+      <div class="form-group">
+        <button type="submit" class="col-xs-4 col-xs-offset-4 btn btn-primary text-center">Save changes</button>
+      </div>
+    </form>
+  </div>
+</ng-template>
+

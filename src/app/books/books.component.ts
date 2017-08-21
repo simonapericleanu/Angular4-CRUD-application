@@ -11,15 +11,21 @@ import {ModalDismissReasons, NgbModal} from '@ng-bootstrap/ng-bootstrap';
 })
 export class BooksComponent implements OnInit {
   closeResult: string;
-  books = [];
+  books: Book[];
   constructor(private bookService: BookService, private modalService: NgbModal) { }
 
   ngOnInit() {
-    this.bookService.getBooks()
-        .subscribe(
-            resBookData => this.books = resBookData
-        );
+    this.getBooks();
+    // this.bookService.getBooks()
+    //     .subscribe(
+    //         resBookData => this.books = resBookData
+    //     );
   }
+
+  getBooks() {
+    this.books = this.bookService.getBooksFromData()
+  }
+
   public open(content) {
     this.modalService.open(content).result.then((result) => {
       this.closeResult = `Closed with: ${result}`;

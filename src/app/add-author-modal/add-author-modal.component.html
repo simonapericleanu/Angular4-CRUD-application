@@ -1,0 +1,76 @@
+<!--Open Add Book Modal-->
+<button type="button" class="btn btn-primary btn-md" (click)="open(content)"><span class="glyphicon glyphicon-plus"></span>  Add another author</button>
+
+<!--Modal-->
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <button type="button" class="close" (click)="d('Cross click')" data-dismiss="modal" aria-label="Close"><span
+            aria-hidden="true">&times;</span></button>
+    <h4 class="modal-title" id="createNewAuthorModalLabel">Add another author</h4>
+  </div>
+  <div class="modal-body">
+    <form class="form-horizontal" #f="ngForm" (ngSubmit)="onSubmit(f)">
+      <div class="form-group">
+        <label for="AuthorName" class="col-sm-3 control-label">Name</label>
+        <div class="col-sm-9">
+          <input type="text"
+                 name="name"
+                 class="form-control"
+                 id="AuthorName"
+                 placeholder=""
+                 ngModel>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="AuthorBirth" class="col-sm-3 control-label">Date of Birth</label>
+        <div class="col-sm-9">
+          <input type="text"
+                 name="birth"
+                 class="form-control"
+                 id="AuthorBirth"
+                 placeholder=""
+                 ngModel>
+        </div>
+      </div>
+      <!--TODO Change it to be selectable-->
+      <div class="form-group">
+        <label for="AuthorDeath" class="col-sm-3 control-label">Death Date</label>
+        <div class="col-sm-9">
+          <input type="text"
+                 name="death"
+                 class="form-control"
+                 id="AuthorDeath"
+                 placeholder=""
+                 ngModel>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="AuthorNationality" class="col-sm-3 control-label">Nationality</label>
+        <div class="col-sm-9">
+          <input type="text"
+                 name="nationality"
+                 class="form-control"
+                 id="AuthorNationality"
+                 placeholder=""
+                 ngModel>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="AuthorBibliography" class="col-sm-3 control-label">Bibliography</label>
+        <div class="col-sm-9">
+          <input type="text"
+                 name="bilbliography"
+                 class="form-control"
+                 id="AuthorBibliography"
+                 placeholder=""
+                 ngModel>
+        </div>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="col-xs-4 col-xs-offset-2 col-sm-3 col-sm-offset-3 btn btn-primary">Save changes</button>
+        <button type="button" class="col-xs-2 col-xs-offset-1 btn btn-default" (click)="c('Close click')" aria-label="Close">Close</button>
+      </div>
+    </form>
+  </div>
+</ng-template>
+

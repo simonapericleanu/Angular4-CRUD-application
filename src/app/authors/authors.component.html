@@ -15,12 +15,16 @@
 
       <!--Add a new author-->
       <div class="col-xs-12 col-sm-4 col-sm-offset-2">
-        <button type="button" class="btn btn-primary btn-md"><span class="glyphicon glyphicon-plus"></span>  Add a new author</button>
+        <app-add-author-modal></app-add-author-modal>
       </div>
     </div>
 
-    <!--Insert book template from book component-->
-    <app-author></app-author>
+    <!--Insert author template from author component-->
+    <ul>
+      <li *ngFor="let author of authors">
+        <app-author [author]="author"></app-author>
+      </li>
+    </ul>
 
   </div>
 </div>
