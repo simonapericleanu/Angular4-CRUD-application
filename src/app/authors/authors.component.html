@@ -10,7 +10,7 @@
                             <input type="text"
                                    name="term"
                                    class="form-control"
-                                   placeholder="Search by name"
+                                   placeholder="Search by name or by nationality"
                                    [(ngModel)]="term">
                         </div>
                     </div>
@@ -25,7 +25,7 @@
 
         <!--Insert author template from author component-->
         <ul>
-            <li *ngFor="let author of authors | authorsFilter:term">
+            <li *ngFor="let author of authors | authorsFilter: term">
                 <app-author [author]="author"></app-author>
             </li>
         </ul>
