@@ -9,8 +9,10 @@ export class BooksFilterPipe implements PipeTransform {
     if (term === undefined) {
       return books;
     }
-    return books.filter(function(book) {
-      return book.title.toLowerCase().includes(term.toLowerCase());
+    return books.filter(function (book) {
+      if (book.title.toLowerCase().includes(term.toLowerCase()) || book.author.toLowerCase().includes(term.toLowerCase())) {
+        return true;
+      }
     })
   }
 
